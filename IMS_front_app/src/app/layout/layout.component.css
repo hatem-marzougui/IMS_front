@@ -1,0 +1,24 @@
+.sidenav-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  background-color: #5e6fd3; /* Primary color from Angular Material */
+  color: white;
+}
+
+.sidebar-button {
+  color: white;
+  font-weight: 500;
+  min-height: 50px;
+}
+
+.sidebar-button:hover {
+  background-color: #4654b9; /* Darker shade of primary color */
+}
+
+.content {
+  padding: 20px;
+}

@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/compartiment" class="sidebar-button"
+        >Manage Compartiment</a
+      >
+      <a mat-list-item routerLink="/employee" class="sidebar-button"
+        >Manage Employees</a
+      >
+      <a mat-list-item routerLink="/product" class="sidebar-button"
+        >Manage Products</a
+      >
+      <a mat-list-item routerLink="/category" class="sidebar-button"
+        >Manage Categories</a
+      >
+      <a mat-list-item routerLink="/dashboard" class="sidebar-button"
+        >Visualize Dashboard</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Main content goes here -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
