@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CompartimentsTableComponent } from './compartiments-table/compartiments-table.component';
+import { HttpProviderService } from '../../services/http-provider.service';
 
 @Component({
   selector: 'compartiment-page',
   standalone: true,
-  imports: [],
+  imports: [CompartimentsTableComponent],
   templateUrl: './compartiment-page.component.html',
   styleUrl: './compartiment-page.component.css',
 })
-export class CompartimentPageComponent {
-  constructor() {}
+export class CompartimentPageComponent implements OnInit {
+  compartiments: any[] = [];
+
+  constructor(private httpProviderService: HttpProviderService) {}
 
   ngOnInit(): void {
-    console.log('AppComponent has been initialized!');
+    this.loadCompartiments();
+  }
+
+  loadCompartiments() {
+    this.httpProviderService.getAllCompartiments().subscribe(
+      (res) => {
+        this.compartiments = res.body;
+        console.log('Compartiments:', this.compartiments);
+      },
+      (error) => {
+        console.error('Error fetching compartiments:', error);
+      }
+    );
   }
 }
